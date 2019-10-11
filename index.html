@@ -95,6 +95,31 @@
             padding-top: 4%;
             padding-bottom: 2%;
         }
+
+        #placehere div{
+        }
+
+        h1 {
+          text-shadow: 0 1px 0 #ccc,
+                       0 2px 0 #c9c9c9,
+                       0 3px 0 #bbb,
+                       0 4px 0 #b9b9b9,
+                       0 5px 0 #aaa,
+                       0 6px 1px rgba(0,0,0,.1),
+                       0 0 5px rgba(0,0,0,.1),
+                       0 1px 3px rgba(0,0,0,.3),
+                       0 3px 5px rgba(0,0,0,.2),
+                       0 5px 10px rgba(0,0,0,.25),
+                       0 10px 10px rgba(0,0,0,.2),
+                       0 20px 20px rgba(0,0,0,.15);
+            text-align: center;
+        }
+
+        img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
         
     </style>
     
@@ -104,14 +129,14 @@
     
     <div class="container-fluid">
         <div class="top">
-            <p class="title text-center">Room Locator</p>
+            <p class="title text-center"><h1>Room Locator</h1></p>
             <i class="fas fa-arrow-left" onclick="egg()"></i>
         </div>
         
         <div class="main">
             <div class="container col-lg-8">
                 <p>
-                    Please Select the Day of the Week and The time of the day to find which rooms are available. 
+                    Please Select the Day of the Week and The time of the day to find which rooms are available. &#128521
                 </p>
                 
                 <div class="form-group">
@@ -155,6 +180,8 @@
                 
                 <div id="list">
                     <p>Available Rooms</p>
+                    <div id = "placehere">
+                    </div>
                     <div class="container" id="someContainer">
                         <div class="row" id="available">
                             
@@ -162,12 +189,14 @@
                         
 
                     </div>
+                    
                </div>
                 
                 <br>
                 
             </div>
         </div>
+        
         
         <div class="foot">
             <div class="container h-100 text-center">
@@ -550,6 +579,13 @@
             }    
 
             if(rooms[0]==0 && rooms[1]==0 && rooms[2]==0 && rooms[3]==0){
+
+                    var elem = document.createElement("img");
+                    elem.setAttribute("src", "https://media.giphy.com/media/NkW4LM727h1U4/giphy.gif");
+                    elem.setAttribute("height", "380");
+                    elem.setAttribute("width", "300");
+                    
+                    document.getElementById("placehere").appendChild(elem);
                     var div = document.createElement('div');
                     div.textContent = 'No Rooms available :(';
                     div.setAttribute('class', 'no-room');
@@ -562,8 +598,7 @@
         function egg() {
             alert("I see you've found the easter egg! hmm... All i wanna say is that You're a really nice person! Have a great day buddy :)")
         }              
-    </script>
-    
+    </script>       
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
